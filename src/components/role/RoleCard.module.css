@@ -1,0 +1,42 @@
+.card {
+  background: white;
+  padding: 12px 16px;
+  border-radius: 16px;
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 12px;
+  cursor: pointer;
+  border: 1px solid #f1f5f9;
+  transition: all 0.2s ease;
+}
+
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.selected { border-color: var(--accent); background: #f0f7ff; }
+
+.left { display: flex; align-items: center; gap: 14px; }
+
+.iconBox {
+  width: 48px; height: 48px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: #f8fafc;
+}
+.iconBox span { font-size: 24px; }
+
+/* Colors matching your brand */
+.admin { color: #0891b2; background: #ecfeff; }
+.principal { color: #7c3aed; background: #f5f3ff; }
+.teacher { color: #0284c7; background: #f0f9ff; }
+.parent { color: #ea580c; background: #fff7ed; }
+
+.name { font-size: 16px; font-weight: 700; color: #1e293b; margin: 0; text-align: left; }
+.desc { font-size: 13px; color: #64748b; margin-top: 2px; text-align: left; }
+
+.arrowBox {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: var(--bg-card);
+border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .card { background: #181818; border-color: #2f2f2f; }
+[data-theme="dark"] .name { color: #fff; }

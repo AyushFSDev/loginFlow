@@ -1,0 +1,160 @@
+/* src/pages/Login.module.css */
+.page {
+  min-height: 100vh;
+  background: var(--bg-page);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.topActions {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+  z-index: 100;
+}
+
+.iconBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #111; /* Default Black for Light Mode */
+  transition: all 0.2s ease;
+}
+
+/* 🔥 DARK MODE ICON COLOR FIX */
+[data-theme="dark"] .iconBtn {
+  color: #ffffff !important; /* Icons white ho jayenge */
+  background: #1f2937;
+  border-color: #374151;
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: 28px;
+  padding: 44px 48px;
+  width: 100%;
+  margin-bottom: 300px;
+  max-width: 700px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+/* Mobile responsive changes */
+@media (max-width: 520px) {
+  .page {
+    align-items: flex-start; /* Mobile pe top se start hoga */
+    padding-top: 80px;
+  }
+
+  .card {
+    background: transparent; /* White container removed */
+    border: none;
+    box-shadow: none;
+    padding: 20px;
+    padding-bottom: 300px;
+    margin: 0;
+  }
+  .logoImg {
+    width: 150px; /* Mobile par logo thoda chota */
+    height: auto;
+  }
+  .footer {
+    position: relative;
+    bottom: auto;
+    margin-top: 60px;
+  }
+}
+
+/* Error and Buttons stay same as your base */
+.logoArea {
+  margin-bottom: 32px;
+}
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.submitBtn {
+  margin-top: 24px;
+  width: 100%;
+}
+.footer {
+  position: fixed;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.link {
+  color: #3b82f6;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Error Banner Container */
+.errorBanner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #fef2f2; /* Light red background */
+  border: 1px solid #fee2e2;
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Icon Style */
+.errorIcon {
+  color: #ef4444; /* Standard alert red */
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.errorIcon span {
+  font-size: 20px;
+  font-variation-settings: 'FILL' 1; /* Makes the warning icon solid */
+}
+
+/* Text Style */
+.errorText {
+  color: #991b1b; /* Darker red for readability */
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] .errorBanner {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+[data-theme="dark"] .errorText {
+  color: #fca5a5;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

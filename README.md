@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# SchoolCoreOS – Login & Selection Flow
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based application that demonstrates a complete authentication flow with:
+- Institute selection
+- Role-based access
+- Dynamic navigation
+- Theme persistence (Dark/Light)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🔗 Live Demo
+https://loginselectionflow.netlify.app/
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🔐 Test Credentials (Flow-wise)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1. Invalid Credentials
+- Email: any wrong email  
+- Password: wrong  
+- Result: Incorrect credentials  
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. No Institute Associated
+- Email: noah.brown@schoolcoreos.com  
+- Password: 1234  
+- Result: Error – Not associated with any institute  
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. One Institute + One Role
+- Email: james.wilson@schoolcoreos.com  
+- Password: 1234  
+- Flow: Login → Dashboard  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 4. One Institute + Multiple Roles
+- Email: emily.davis@schoolcoreos.com  
+- Password: 1234  
+- Flow: Login → Role Selection → Dashboard  
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 5. Multiple Institute + Multiple Roles
+- Email: michael.ross@schoolcoreos.com  
+- Password: 1234  
+- Flow: Login → Institute Selection → Role Selection → Dashboard  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 6. Multiple Institute + Single Role
+- Email: sarah.parker@schoolcoreos.com  
+- Password: 1234  
+- Flow: Login → Institute Selection → Dashboard  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🚀 Features
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Dynamic login flow handling
+- Role-based navigation
+- Multi-institute support
+- Theme persistence across screens
+- Clean UI with responsive design
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 🛠️ Tech Stack
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- React.js
+- React Router
+- CSS Modules
+- Context API (State Management)
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📌 Notes
 
-### Making a Progressive Web App
+- All flows have been tested and are working as expected
+- Theme (Dark/Light) persists across navigation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 📂 Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+npm install
+npm start

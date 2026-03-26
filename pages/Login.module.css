@@ -56,7 +56,7 @@
 /* Mobile responsive changes */
 @media (max-width: 520px) {
   .page {
-    align-items: flex-start; /* Mobile pe top se start hoga */
+    align-items: flex-start; 
     padding-top: 80px;
   }
 
@@ -69,7 +69,7 @@
     margin: 0;
   }
   .logoImg {
-    width: 150px; /* Mobile par logo thoda chota */
+    width: 150px; 
     height: auto;
   }
   .footer {

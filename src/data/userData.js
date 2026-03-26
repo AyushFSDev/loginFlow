@@ -156,6 +156,7 @@ export const USERS = {
           name: "North Park Academy",
           location: "Mumbai, Maharashtra",
           type: "School",
+          logo: "https://i.pinimg.com/236x/c2/e6/c8/c2e6c877f9bdae422d03d0d9efc8ee5e.jpg",
           roles: [
             { id: "admin", name: "Administrator", desc: "Full system access" },
             { id: "principal", name: "Principal", desc: "Institute oversight" },

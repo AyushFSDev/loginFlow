@@ -4,9 +4,26 @@ import { createContext, useContext, useState } from "react";
 const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
-  const [user,              setUser]              = useState(null);
+  const [user, setUser] = useState(null);
   const [selectedInstitute, setSelectedInstitute] = useState(null);
-  const [selectedRole,      setSelectedRole]      = useState(null);
+  const [selectedRole, setSelectedRole] = useState(null);
+
+  // Global dark mode state
+  const [isDark, setIsDark] = useState(false);
+
+  /**
+   * toggleTheme:
+   * - Flips isDark state globally
+   * - Applies data-theme attribute on <html> for CSS variables
+   */
+  const toggleTheme = () => {
+    const next = !isDark;
+    setIsDark(next);
+    document.documentElement.setAttribute(
+      "data-theme",
+      next ? "dark" : "light",
+    );
+  };
 
   const logout = () => {
     setUser(null);
@@ -17,10 +34,15 @@ export const AuthProvider = ({ children }) => {
   return (
     <AuthContext.Provider
       value={{
-        user,              setUser,
-        selectedInstitute, setSelectedInstitute,
-        selectedRole,      setSelectedRole,
+        user,
+        setUser,
+        selectedInstitute,
+        setSelectedInstitute,
+        selectedRole,
+        setSelectedRole,
         logout,
+        isDark,
+        toggleTheme,
       }}
     >
       {children}

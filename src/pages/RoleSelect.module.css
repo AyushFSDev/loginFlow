@@ -55,19 +55,33 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  padding: 10px 20px;
+  border-radius: 100px;
   background: #f1f5f9;
   border: 1px solid #e2e8f0;
-  padding: 8px 20px;
-  border-radius: 100px;
-  font-size: 14px;
   font-weight: 600;
-  color: #64748b;
+  color: #475569;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
 }
-.backBtn:hover {
-  background: #e2e8f0;
-  color: #1e293b;
+
+/*Dark Mode (Screenshot Match: Subtle Grey Background) */
+[data-theme="dark"] .backBtn {
+  background: #27272a; 
+  border: 1px solid #3f3f46; 
+  color: #ffffff; 
+  padding: 10px 20px;
+}
+
+[data-theme="dark"] .backBtn:hover {
+  background: #3f3f46;
+  color: #ffffff;
+}
+
+/* Icon size adjustment to match text */
+.backBtn span {
+  font-size: 18px;
+  font-weight: normal;
 }
 
 .greeting {
@@ -87,7 +101,7 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 10px;
 }
 
 .footer {
@@ -115,7 +129,7 @@
 
 .checkBadge {
   position: absolute;
-  right: 16px; /* 🔥 card ke andar hi rahega */
+  right: 16px; 
   top: 50%;
   transform: translateY(-50%);
 
@@ -133,7 +147,7 @@
   color: white;
   font-variation-settings: "FILL" 1;
 }
-/* Optional: Institute card ka background thoda light blue karne ke liye */
+
 .activeCardWrapper {
   position: relative;
   width: 100%;
@@ -141,7 +155,7 @@
 
 .activeCardWrapper :global(.cardItem) {
   width: 100%;
-  padding: 16px 56px 16px 16px; /* 🔥 right side space for icon */
+  padding: 16px 56px 16px 16px; 
   background: #eaf4ff;
   border: 1.5px solid #93c5fd;
   border-radius: 16px;

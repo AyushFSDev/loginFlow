@@ -115,7 +115,7 @@ const RoleSelect = () => {
       {/* --- PAGE FOOTER --- */}
       <footer className={styles.footer}>
         Can't find your role? Contact your administrator or email{" "}
-        <span className={styles.link}>support@schoolcoreos.com</span>
+        <span className={styles.link} onClick={() => window.open("mailto:support@schoolcoreos.com")}>support@schoolcoreos.com</span>
       </footer>
     </div>
   );

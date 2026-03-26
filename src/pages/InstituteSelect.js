@@ -122,7 +122,7 @@ const InstituteSelect = () => {
       {/* Footer */}
       <footer className={styles.footer}>
         Can't find your institute? Contact your administrator or email{" "}
-        <span className={styles.link}>
+        <span className={styles.link} onClick={() => window.open("mailto:support@schoolcoreos.com")}>
           support@schoolcoreos.com
         </span>
       </footer>

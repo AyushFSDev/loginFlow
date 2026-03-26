@@ -23,35 +23,35 @@ https://loginselectionflow.netlify.app/
 ---
 
 ### 2. No Institute Associated
-- Email: noah.brown@schoolcoreos.com  
+- Email: noah.brown@scos.com  
 - Password: 1234  
 - Result: Error – Not associated with any institute  
 
 ---
 
 ### 3. One Institute + One Role
-- Email: james.wilson@schoolcoreos.com  
+- Email: jameswilson@scos.com   
 - Password: 1234  
 - Flow: Login → Dashboard  
 
 ---
 
 ### 4. One Institute + Multiple Roles
-- Email: emily.davis@schoolcoreos.com  
+- Email: emily.davis@scos.com  
 - Password: 1234  
 - Flow: Login → Role Selection → Dashboard  
 
 ---
 
 ### 5. Multiple Institute + Multiple Roles
-- Email: michael.ross@schoolcoreos.com  
+- Email: michael.ross@scos.com  
 - Password: 1234  
 - Flow: Login → Institute Selection → Role Selection → Dashboard  
 
 ---
 
 ### 6. Multiple Institute + Single Role
-- Email: sarah.parker@schoolcoreos.com  
+- Email: sarah.parker@scos.com  
 - Password: 1234  
 - Flow: Login → Institute Selection → Dashboard  
 

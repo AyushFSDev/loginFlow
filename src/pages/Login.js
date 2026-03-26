@@ -68,43 +68,39 @@ const Login = () => {
    * - Updates global auth state
    * - Navigates user based on flow
    */
-  const handleLogin = () => {
+ const handleLogin = () => {
   setError("");
   setLoading(true);
 
-  // Simulate API delay
   setTimeout(() => {
-    const foundUser = USERS[email.trim()];
+    const result = handleLoginFlow(email, password, USERS);
 
-    // 1. Check if user exists and password matches
-    if (foundUser && foundUser.password === password) {
-      const { user } = foundUser;
-
-      // NEW CHECK: If user is not associated with any institute
-      if (!user.institutes || user.institutes.length === 0) {
-        setError("This account is not associated with any institute. Please contact support.");
-        setLoading(false);
-        return;
-      }
-
-      // 2. If valid, proceed with normal flow
-      setUser(user);
-      const result = handleLoginFlow(user);
-
-      if (result.institute) setSelectedInstitute(result.institute);
-      if (result.role) setSelectedRole(result.role);
-
-      const routes = {
-        DASHBOARD: "/dashboard",
-        SELECT_INSTITUTE: "/institute",
-        SELECT_ROLE: "/role",
-      };
-      
-      navigate(routes[result.nextScreen] || "/dashboard");
-    } else {
-      // 3. Invalid Credentials
-      setError("Incorrect username or password. Please try again.");
+    // ❌ Error case
+    if (result.type === "ERROR") {
+      setError(result.message);
+      setLoading(false);
+      return;
     }
+
+    // ✅ Success case
+    setUser(result.user);
+
+    if (result.institute) {
+      setSelectedInstitute(result.institute);
+    }
+
+    if (result.role) {
+      setSelectedRole(result.role);
+    }
+
+    const routes = {
+      DASHBOARD: "/dashboard",
+      SELECT_INSTITUTE: "/institute",
+      SELECT_ROLE: "/role",
+    };
+
+    navigate(routes[result.nextScreen] || "/dashboard");
+
     setLoading(false);
   }, 400);
 };

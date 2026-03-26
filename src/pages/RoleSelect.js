@@ -86,9 +86,6 @@ const RoleSelect = () => {
           <div className={styles.activeSection}>
             <div className={styles.activeCardWrapper}>
               <SelectedInstituteCard institute={selectedInstitute} />
-              <div className={styles.checkBadge}>
-                <span className="material-symbols-rounded">verified</span>
-              </div>
             </div>
           </div>
         )}

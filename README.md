@@ -23,7 +23,7 @@ https://loginselectionflow.netlify.app/
 ---
 
 ### 2. No Institute Associated
-- Email: noah.brown@scos.com  
+- Email: ayushnakade@scos.com  
 - Password: 1234  
 - Result: Error – Not associated with any institute  
 
